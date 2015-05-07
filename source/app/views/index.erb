@@ -1,18 +1,21 @@
 <article>
-  <h2>My post</h2>
-  <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+  <h1>Create Your Survey!</h1>
+  <p>When you are done added questions to your survey, click the create button below to generate your custom survey URL!</p>
 </article>
 
-<div id="comment_area">
-  <h4>Comments</h4>
+<div id="question_area">
+  <h4>Questions</h4>
 
-  <ul id="comment_list">
-    <li>
-      Nice post.  Don't know how to read that Roman mumbo-jumbo, but I like it.
-      <span class="author">Tom Jones</span>
-    </li>
-  </ul>
+  <form id="question_list">
+    <!-- append new question here -->
+  </form>
 
+  <form id='new_question' action='/' method='post'>
+    <h3>What question would you like to ask?</h3>
+    <input type='text' name='question' placeholder='Question...'>
+    <input type='submit' value='Create'>
+  </form>
 
-  <button id="new_comment_button">New Comment</button>
+  <button id="new_question_button">New Question</button>
+  <button id="create_survey_button">Finished! Create Survey</button>
 </div>

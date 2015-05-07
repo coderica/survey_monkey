@@ -1,23 +1,25 @@
-#comment_area {
+#wrap {
+  width: 60%;
+  margin: auto;
+}
+
+#question_area {
   padding: 10px 0;
   border-top: 1px solid #ddd;
 }
 
-#comment_area h4 {
+#question_area h4 {
   margin-top: 0;
 }
 
-#new_comment_button {
+#new_question_button {
   margin-top: 10px;
 }
 
-ul#comment_list {
+#question_list {
   list-style-type: none;
   margin: 20px 0 0;
   padding: 0;
-}
-
-ul#comment_list li {
   display: block;
   padding: 6px;
   background-color: #ddd;
@@ -26,7 +28,7 @@ ul#comment_list li {
   margin: 5px 0px;
 }
 
-ul#comment_list .author {
+ul#question_list .author {
   display: block;
   font-size: 0.8em;
   color: #444;
@@ -34,7 +36,7 @@ ul#comment_list .author {
   font-style: italic;
 }
 
-form#new_comment {
+form#new_question {
   width: 360px;
   background-color: #777;
   padding: 6px;
@@ -42,16 +44,16 @@ form#new_comment {
   border-radius: 3px;
 }
 
-form#new_comment textarea {
+form#new_question textarea {
   width: 100%;
 }
 
-form#new_comment input#authorName {
+form#new_question input#authorName {
   min-width: 50%;
   max-width: 68%;
 }
 
-form#new_comment input[type="submit"] {
+form#new_question input[type="submit"] {
   min-width: 30%;
   float: right;
 }
