@@ -12,7 +12,7 @@
   margin-top: 0;
 }
 
-#new_question_button {
+#create_new_question_button {
   margin-top: 10px;
 }
 
@@ -36,7 +36,7 @@ ul#question_list .author {
   font-style: italic;
 }
 
-form#new_question {
+form#new_question_form {
   width: 360px;
   background-color: #777;
   padding: 6px;
@@ -44,16 +44,16 @@ form#new_question {
   border-radius: 3px;
 }
 
-form#new_question textarea {
+form#new_question_form textarea {
   width: 100%;
 }
 
-form#new_question input#authorName {
+form#new_question_form input#authorName {
   min-width: 50%;
   max-width: 68%;
 }
 
-form#new_question input[type="submit"] {
+form#new_question_form input[type="submit"] {
   min-width: 30%;
   float: right;
 }
