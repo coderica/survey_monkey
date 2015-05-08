@@ -3,9 +3,13 @@
   margin: auto;
 }
 
+article {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
 #question_area {
   padding: 10px 0;
-  border-top: 1px solid #ddd;
 }
 
 #question_area h4 {
@@ -24,7 +28,7 @@
 
 form#new_question_form {
   background-color: #777;
-  padding: 6px;
+  padding: 15px;
   border: 1px solid #666;
   border-radius: 3px;
 }
@@ -37,12 +41,21 @@ form#new_question_form {
   background-color: #ddd;
   border-radius: 3px;
   border: 1px solid #ccc;
-  padding: 6px;
+  padding: 5px 15px 5px 15px;
   margin-top: 6px;
 }
   
 #hide, #remove_answer_button {
     display:none;
+}
+
+h3 {
+  margin: 15px 0px 15px 0px;
+  padding: 0px;
+}
+
+input[type="text"]{
+    size: 65;
 }
 
 body{
@@ -53,8 +66,8 @@ body{
 }
 
 p{
-  margin  : 0 0 1.5em;
-  padding : 0;
+  margin  : 15px 0px 15px 0px;
+  padding : 0px;
 }
 
 a{
