@@ -2,7 +2,6 @@ get '/' do
 	erb :index
 end
 
-
 post '/short_answer' do
 	if request.xhr?
 		survey_question = params[:question]
