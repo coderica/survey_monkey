@@ -25,3 +25,17 @@ post '/short_answer' do
 		return "hello"
 	end
 end
+
+
+post '/form' do
+	# form = params[:form]
+	# p form
+	form = Form.new(content: params[:form]);
+
+	if form.save
+		p 'success'
+	end
+end
+
+get '/form/:id' do
+end

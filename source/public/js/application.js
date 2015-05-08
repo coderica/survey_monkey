@@ -58,5 +58,16 @@ $(document).ready(function() {
 		// var $list = $($("#multiple_choice_list").find("li")[-1]).clone()
 		// $('#multiple_choice_list').append($list);
 	})
+
+	$('#create_survey_button').on('click', function(event) {
+		event.preventDefault();
+		$form = $('#question_list').prop('outerHTML');
+		// $('#title_area').append($form);		
+
+		$.post('/form', { form: $form}, function(data) {
+			console.log('success');
+			console.log(data);
+		});
+	});
 });
 
