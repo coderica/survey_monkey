@@ -32,14 +32,6 @@
 
     <% else %>
 
-      <% unless @user %>
-        <% @user = User.new %>
-      <% end %>
-
-      <% @user.errors.full_messages.each do |error| %>
-        <p><%= error %></p>
-      <% end %>
-
       <div id="login">
         <h2>LOGIN</h2>
         <form action="/login" method="post">
@@ -51,7 +43,7 @@
 
       <div id="signup">
         <form action="/users" method="post">
-          <p><input type="text" name="username" placeholder="Username" value=<%= @user.username %></p>
+          <p><input type="text" name="username" placeholder="Username"></p>
           <p><input type="password" name="password" placeholder="Password"></p>
           <p><input type="submit" value="Register"></p>
         </form>

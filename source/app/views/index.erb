@@ -1,4 +1,5 @@
 <!-- display previously created surveys here -->
+<% if @user %>
   <% @user.forms.each_with_index do |form, index| %>
     <a href="/forms/<%= form.id %>">Survey <%= form.index %></a>
   <% end %>
@@ -7,4 +8,6 @@
   <form action="/surveys/new" method="get">
     <input type="submit" value="Create New Survey"></p>
   </form>
-
+<% else %>
+  <h1>You are not log in</h1>
+<% end %>

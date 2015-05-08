@@ -1,5 +1,13 @@
 get '/' do
+	@user = current_user if logged_in?
 	erb :index
+end
+
+get '/surveys/new' do
+	erb :create_surveyf
+end
+
+get '/form/:id' do
 end
 
 post '/opinion' do
@@ -17,7 +25,7 @@ post '/form' do
 		content: params[:form],
 		title: params[:title],
 		instructions: params[:instructions],
-		# user_id: current_user.id
+		user_id: current_user.id
 	);
 	if form.save
 		status 200
@@ -28,5 +36,24 @@ post '/form' do
 	end
 end
 
-get '/form/:id' do
+post '/login' do
+	@user = User.where(username: params[:username]).first
+	if @user.password == params[:password]
+		status 200
+		login(@user)
+	else
+		status 404
+	end
+	redirect '/'
 end
+
+post '/users' do
+	@user = User.create(username: params[:username], password: params[:password])
+	redirect '/'
+end
+
+delete '/logout' do
+	logout
+	redirect '/'
+end
+
