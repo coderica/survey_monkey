@@ -1,4 +1,5 @@
-<article>
+<!-- <div class="container"> -->
+<article >
   <h1>Create Your Survey!</h1>
   <p>When you are done added questions to your survey, click the create button below to generate your custom survey URL!</p>
 </article>
@@ -12,7 +13,7 @@
 <div id="instructions_area">
   <h3>DESCRIPTION/INSTRUCTIONS:</h3>
 
-  <input type='text' size="80" name='question' placeholder='Your survey description/instructions goes here'>
+  <input type='text' size="50" name='question' placeholder='Your survey description/instructions goes here'>
 </div>
 
 <div id="question_area">
@@ -24,7 +25,7 @@
 
   <form id='new_question_form' action='/short_answer' method='post'>
     <h3>What question would you like to ask?</h3>
-    <input type='text' size="80" name='question' placeholder='Question...'>
+    <input type='text' size="50" name='question' placeholder='Question...'>
     <p>
     <select id="question_selection">
       <option value="opinion">Opinion</option>
@@ -39,8 +40,9 @@
   </form>
 
   <p>
-  <button id="create_new_question_button">New Question</button>
+  <button class="btn btn-default" id="create_new_question_button">New Question</button>
   </p>
   
-  <p><button id="create_survey_button">Finished! Create Survey</button></p>
+  <p><button class="btn btn-default" id="create_survey_button">Finished! Create Survey</button></p>
 </div>
+<!-- </div> -->
