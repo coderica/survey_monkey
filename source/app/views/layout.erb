@@ -21,7 +21,42 @@
 </head>
 <body>
   <div id="wrap">
-    <%= yield %>
+    <% if logged_in? %>
+
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Logout">
+      </form>
+
+      <%= yield %>
+
+    <% else %>
+
+      <% unless @user %>
+        <% @user = User.new %>
+      <% end %>
+
+      <% @user.errors.full_messages.each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+
+      <div id="login">
+        <h2>LOGIN</h2>
+        <form action="/login" method="post">
+          <p><input type="text" name="username" placeholder="Username"></p>
+          <p><input type="password" name="password" placeholder="Password"></p>
+          <p><input type="submit" value="Login"></p>
+        </form>
+      </div>
+
+      <div id="signup">
+        <form action="/users" method="post">
+          <p><input type="text" name="username" placeholder="Username" value=<%= @user.username %></p>
+          <p><input type="password" name="password" placeholder="Password"></p>
+          <p><input type="submit" value="Register"></p>
+        </form>
+      </div>
+    <% end %>
   </div>
 </body>
 </html>

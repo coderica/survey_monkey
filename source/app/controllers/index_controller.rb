@@ -2,17 +2,15 @@ get '/' do
 	erb :index
 end
 
-
 post '/opinion' do
 	if request.xhr?
 		survey_question = params[:question]
 		selector_option = params[:type]
-		return erb :"/_#{selector_option}", :layout => false, locals: {question: survey_question}		
+		return erb :"/_#{selector_option}", :layout => false, locals: {question: survey_question}
 	else
 		return "hello"
 	end
 end
-
 
 post '/form' do
 	form = Form.new(
