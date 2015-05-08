@@ -17,43 +17,85 @@
 }
 
 #question_list {
-  list-style-type: none;
-  margin: 20px 0 0;
-  padding: 0;
+  margin: 20px 0px 20px 0px;
+  /*margin: 5px 0px;*/
   display: block;
-  padding: 6px;
-  background-color: #ddd;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  margin: 5px 0px;
-}
-
-ul#question_list .author {
-  display: block;
-  font-size: 0.8em;
-  color: #444;
-  margin-top: 4px;
-  font-style: italic;
 }
 
 form#new_question_form {
-  width: 360px;
   background-color: #777;
   padding: 6px;
   border: 1px solid #666;
   border-radius: 3px;
 }
 
-form#new_question_form textarea {
+/*form#new_question_form textarea {
   width: 100%;
+}*/
+
+.partial_question {
+  background-color: #ddd;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 6px;
+  margin-top: 6px;
+}
+  
+#hide, #remove_answer_button {
+    display:none;
 }
 
-form#new_question_form input#authorName {
-  min-width: 50%;
-  max-width: 68%;
+body{
+  margin      : 0;
+  padding     : 1.5em;
+  font-family : sans-serif;
+  line-height : 1.5;
 }
 
-form#new_question_form input[type="submit"] {
-  min-width: 30%;
-  float: right;
+p{
+  margin  : 0 0 1.5em;
+  padding : 0;
+}
+
+a{
+  color           : #9c3;
+  text-decoration : none;
+}
+
+.starRating:not(old){
+  display        : inline-block;
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('../star-off.svg');
+  background-size : contain;
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('../star-on.svg');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.starRating:not(old) > label:hover:before,
+.starRating:not(old) > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
 }
