@@ -1,50 +1,48 @@
+<article>
+  <h1>Create Your Survey!</h1>
+  <p>When you are done added questions to your survey, click the create button below to generate your custom survey URL!</p>
+</article>
 
 
-  <article>
-    <h1>Create Your Survey!</h1>
-    <p>When you are done added questions to your survey, click the create button below to generate your custom survey URL!</p>
-  </article>
+<div id="title_area">
+  <h3>TITLE:</h3>
+  <input type='text' size="50" name='question' placeholder='Your survey title goes here'>
+</div>
 
+<div id="instructions_area">
+  <h3>DESCRIPTION/INSTRUCTIONS:</h3>
 
-  <div id="title_area">
-    <h3>TITLE:</h3>
-    <input type='text' size="50" name='question' placeholder='Your survey title goes here'>
+  <input type='text' size="80" name='question' placeholder='Your survey description/instructions goes here'>
+</div>
+
+<div id="question_area">
+  <h3>QUESTIONS:</h3>
+
+  <div id="question_list">
+    <!-- append new question here -->
   </div>
 
-  <div id="instructions_area">
-    <h3>DESCRIPTION/INSTRUCTIONS:</h3>
-
-    <input type='text' size="80" name='question' placeholder='Your survey description/instructions goes here'>
-  </div>
-
-  <div id="question_area">
-    <h3>QUESTIONS:</h3>
-
-    <div id="question_list">
-      <!-- append new question here -->
-    </div>
-
-    <form id='new_question_form' action='/short_answer' method='post'>
-      <h3>What question would you like to ask?</h3>
-      <input type='text' size="80" name='question' placeholder='Question...'>
-      <p>
-      <select id="question_selection">
-        <option value="opinion">Opinion</option>
-        <option value="five_star">Five Star</option>
-        <option value="true_false">True/False</option>
-        <option value="yes_no">Yes/No</option>
-        <option value="multiple_choice">Multiple Choice</option>
-        <option value="one_to_five">1 To 5</option>
-      </select>
-      <input type='submit' value='Create'>
-      </p>
-    </form>
-
+  <form id='new_question_form' action='/short_answer' method='post'>
+    <h3>What question would you like to ask?</h3>
+    <input type='text' size="80" name='question' placeholder='Question...'>
     <p>
-    <button id="create_new_question_button">New Question</button>
+    <select id="question_selection">
+      <option value="opinion">Opinion</option>
+      <option value="five_star">Five Star</option>
+      <option value="true_false">True/False</option>
+      <option value="yes_no">Yes/No</option>
+      <option value="multiple_choice">Multiple Choice</option>
+      <option value="one_to_five">1 To 5</option>
+    </select>
+    <input type='submit' value='Create'>
     </p>
-    
-    <p><button id="create_survey_button">Finished! Create Survey</button></p>
-  </div>
+  </form>
+
+  <p>
+  <button id="create_new_question_button">New Question</button>
+  </p>
+  
+  <p><button id="create_survey_button">Finished! Create Survey</button></p>
+</div>
 
 
