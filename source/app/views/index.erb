@@ -1,13 +1,15 @@
 <!-- display previously created surveys here -->
 <% if @user %>
-  <% @user.forms.each_with_index do |form, index| %>
-    <a href="/forms/<%= form.id %>">Survey <%= form.index %></a>
-  <% end %>
-
 <!-- create new survey button -->
   <form action="/surveys/new" method="get">
     <input type="submit" value="Create New Survey"></p>
   </form>
+
+  <% @user.forms.each_with_index do |form, index| %>
+    <p>
+      <a id="<%= form.id %>" class="user_survey" href="/forms/<%= form.id %>">Survey <%= index + 1 %></a>
+    </p>
+  <% end %>
 <% else %>
   <h1>You are not log in</h1>
 <% end %>

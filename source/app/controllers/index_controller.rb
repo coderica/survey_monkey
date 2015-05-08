@@ -7,7 +7,17 @@ get '/surveys/new' do
 	erb :create_survey
 end
 
-get '/form/:id' do
+get '/forms/:id' do
+	@form = Form.find(params[:id])
+	
+	if request.xhr?
+		return {
+			title: @form.title,
+			instructions: @form.instructions,
+			content: @form.content
+		}.to_json
+	end
+	redirect '/'
 end
 
 post '/opinion' do

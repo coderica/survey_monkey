@@ -61,7 +61,7 @@ $(document).ready(function() {
 		$form = $('#question_list').prop('outerHTML');
 		$title = $('#title_area').prop('outerHTML');
 		$instructions = $('#instructions_area').prop('outerHTML');
-		console.log('hello');
+		// console.log('hello');
 
 		$.post('/form',
 				{
@@ -71,11 +71,37 @@ $(document).ready(function() {
 				});
 	};
 
+	var showSurvey = function(event) {
+		event.preventDefault();
+		// debugger
+		var $formId = $(this).attr('id');
+		$link = $(this).parent();
+		// debugger
+		$.ajax({
+			url: '/forms/' + $formId,
+			type: 'GET',
+			data: { id: $formId },
+			success: function(response) {
+				$data = $.parseJSON(response);
+				$survey = $('<div></div>');
+				$survey.append($data.title);
+				$survey.append($data.instructions);
+				$survey.append($data.content);
+				$link.append($survey);
+			},
+			error: function() {
+				console.log('oops');
+			}
+		});
+		
+	}
+
 
 	$("#create_new_question_button").on('click', createForm);
 	$("#new_question_form").on('submit', submitForm);
 	$('#question_list').on('click', "#add_answer_button", addAnswerButton);
 	$('#question_list').on('click', "#remove_answer_button", removeAnswer);
 	$('#create_survey_button').on('click', createSurvey);
+	$('.user_survey').on('click', showSurvey);
 });
 
