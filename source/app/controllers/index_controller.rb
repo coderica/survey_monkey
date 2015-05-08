@@ -4,7 +4,7 @@ get '/' do
 end
 
 get '/surveys/new' do
-	erb :create_surveyf
+	erb :create_survey
 end
 
 get '/form/:id' do
