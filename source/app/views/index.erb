@@ -1,7 +1,11 @@
+
+<h1> WELCOME TO SURVEY GOPHER </h1>
+<img src="survey_gopher.png" alt="mascot">
+
 <!-- display previously created surveys here -->
 <% if @user %>
   <% @user.forms.each_with_index do |form, index| %>
-    <a href="/forms/<%= form.id %>">Survey <%= form.index %></a>
+    <a href="/forms/<%= form.id %>">Survey <%= index %></a>
   <% end %>
 
 <!-- create new survey button -->
@@ -11,3 +15,5 @@
 <% else %>
   <h1>You are not log in</h1>
 <% end %>
+
+ 
