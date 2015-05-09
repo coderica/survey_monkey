@@ -9,7 +9,7 @@ end
 
 get '/forms/:id' do
 	@form = Form.find(params[:id])
-	
+
 	if request.xhr?
 		return {
 			title: @form.title,
@@ -38,9 +38,9 @@ post '/form' do
 		user_id: current_user.id
 	);
 	if form.save
-		status 200
 		p 'foooooooooooooooooo'
 		p 'success!!!'
+		status 200
 	else
 		status 422
 	end

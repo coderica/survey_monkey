@@ -60,12 +60,8 @@ $(document).ready(function() {
 		event.preventDefault();
 		var $form = $('#question_list');//.prop('outerHTML');
 		$form.find('.delete_question_button').parent().remove();
-		// var $title = $('#title_area').prop('outerHTML');
 		var titleStr = $('#title_area').find('input[type="text"]').val();
-		// var $instructions = $('#instructions_area').prop('outerHTML');
 		var instrucStr = $('#instructions_area').find('input[type="text"]').val();
-		// debugger
-		// console.log('hello');
 
 		$.post('/form',
 				{
@@ -73,17 +69,15 @@ $(document).ready(function() {
 					title: titleStr,
 					instructions: instrucStr,
 					success: function() {
-						$.get('/');
+						window.location.href = "/";
 					}
 				});
 	};
 
 	var showSurvey = function(event) {
 		event.preventDefault();
-		// debugger
 		var $formId = $(this).attr('id');
 		$link = $(this).parent();
-		// debugger
 		$.ajax({
 			url: '/forms/' + $formId,
 			type: 'GET',
