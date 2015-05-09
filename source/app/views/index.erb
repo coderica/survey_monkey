@@ -8,9 +8,11 @@
     <input type="submit" value="Create New Survey"></p>
   </form>
 
+<% if @user %>
 <!-- display previously created surveys here -->
   <% @user.forms.each_with_index do |form, index| %>
     <p>
       <a id="<%= form.id %>" class="user_survey" href="/forms/<%= form.id %>">Survey <%= index + 1 %></a>
     </p>
   <% end %>
+<% end %>
