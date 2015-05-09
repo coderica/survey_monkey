@@ -18,6 +18,8 @@ post '/short_answer' do
 			return erb :_multiple_choice, :layout => false, locals: {question: survey_question}		
 		when "one_to_five"
 			return erb :_one_to_five, :layout => false, locals: {question: survey_question}
+			when "number_of_fucks"
+			return erb :_fist_of_five, :layout => false, locals: {question: survey_question}
 		else
 			return erb :_short_answer, :layout => false, locals: {question: survey_question}
 		end
