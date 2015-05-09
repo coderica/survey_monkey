@@ -58,18 +58,44 @@ $(document).ready(function() {
 
 	var createSurvey = function(event) {
 		event.preventDefault();
-		$form = $('#question_list').prop('outerHTML');
-		$title = $('#title_area').prop('outerHTML');
-		$instructions = $('#instructions_area').prop('outerHTML');
-		console.log('hello');
+		var $form = $('#question_list');//.prop('outerHTML');
+		$form.find('.delete_question_button').parent().remove();
+		var titleStr = $('#title_area').find('input[type="text"]').val();
+		var instrucStr = $('#instructions_area').find('input[type="text"]').val();
 
 		$.post('/form',
 				{
-					form: $form,
-					title: $title,
-					instructions: $instructions
+					form: $form.prop('outerHTML'),
+					title: titleStr,
+					instructions: instrucStr,
+					success: function() {
+						window.location.href = "/";
+					}
 				});
 	};
+
+	var showSurvey = function(event) {
+		event.preventDefault();
+		var $formId = $(this).attr('id');
+		$link = $(this).parent();
+		$.ajax({
+			url: '/forms/' + $formId,
+			type: 'GET',
+			data: { id: $formId },
+			success: function(response) {
+				$data = $.parseJSON(response);
+				$survey = $('<div></div>');
+				$survey.append($('<h2>Title: '+ $data.title +'</h2>'));
+				$survey.append($('<h3>Instructions: '+ $data.instructions +'</h3>'));
+				$survey.append($data.content);
+				$link.append($survey);
+			},
+			error: function() {
+				console.log('oops');
+			}
+		});
+		
+	}
 
 
 	$("#create_new_question_button").on('click', createForm);
@@ -77,5 +103,6 @@ $(document).ready(function() {
 	$('#question_list').on('click', "#add_answer_button", addAnswerButton);
 	$('#question_list').on('click', "#remove_answer_button", removeAnswer);
 	$('#create_survey_button').on('click', createSurvey);
+	$('.user_survey').on('click', showSurvey);
 });
 
