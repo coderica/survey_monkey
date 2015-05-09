@@ -1,15 +1,36 @@
 #wrap {
   width: 60%;
   margin: auto;
+  font-family: Lato;
+  background-color: #C0C0C0;
+  opacity: 0.5;
+  padding: 30px;
+  border-radius: 15px;
 }
 
 article {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
+  text-align: center;
+  /*border: 1px dotted black;*/
+  border-radius: 15px;
+  padding: 10px;
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+}
+
+#title_area {
+  /*border: 1px dotted black;*/
+  padding: 10px;
+}
+
+#instruction_area {
+  /*border: 1px dotted black;*/
+  padding: 10px;
 }
 
 #question_area {
   padding: 10px 0;
+  /*border: 1px dotted black;*/
 }
 
 #question_area h4 {
@@ -43,6 +64,7 @@ form#new_question_form {
   border: 1px solid #ccc;
   padding: 5px 15px 5px 15px;
   margin-top: 6px;
+  border-radius: 15px;
 }
   
 #hide, #remove_answer_button {
@@ -58,6 +80,10 @@ input[type="text"]{
     size: 65;
 }
 
+img {
+  opacity: 1;
+}
+
 body{
   margin      : 0;
   padding     : 1.5em;
@@ -70,7 +96,7 @@ p{
   padding : 0px;
 }
 
-a{
+.starRating a{
   color           : #9c3;
   text-decoration : none;
 }
